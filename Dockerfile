@@ -2,9 +2,10 @@ FROM python:3.13-alpine
 
 WORKDIR /app
 
+COPY ./dev-requirements.txt ./
 COPY ./requirements.txt ./
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r dev-requirements.txt
 
 # Copy the rest of the application code to the container
 COPY ./ ./
